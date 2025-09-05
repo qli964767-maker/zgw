@@ -11,12 +11,12 @@
 	<body>
 		<img id="ato" src="img/off.png" width="300px">
 		<br />
-		<button class="btn btn-warning btn-block btn-lg" onclick="calc()" >开关</button>
+		<button id="btn" class="btn btn-warning btn-block btn-lg" onclick="calc()" >开</button>
 		<br />
 		<br />
 		<img id="fato" src="img/stop.png" width="300px">
 		<br />
-		<button class="btn btn-warning btn-block btn-lg" onclick="fcalc()" >开关</button>
+		<button id="fbtn" class="btn btn-warning btn-block btn-lg" onclick="fcalc()" >开</button>
 	</body>
 	<script>
 		let lightOnSrc="img/on.png";  
@@ -30,9 +30,11 @@
 			isLightOn=!isLightOn;
 			if (isLightOn) {
 				img.src=lightOnSrc;
+				btn.textContent="关";
 			}
 			else {
 				img.src=lightOffSrc;
+				btn.textContent="开";
 			}
 		}
 		function fcalc() {
@@ -40,9 +42,11 @@
 			fenon=!fenon;
 			if (fenon) {
 				img.src=fenonSrc;
+				fbtn.textContent="停";
 			}
 			else {
 				img.src=fenoffSrc;
+				fbtn.textContent="开";
 			}
 		}
 	</script>
