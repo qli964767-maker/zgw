@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/js/bootstrap.bundle.min.js"></script>
+	</head>
+	<body>
+		<img id="ato" src="img/off.png" width="300px">
+		<br />
+		<button class="btn btn-warning btn-block btn-lg" onclick="calc()" >开关</button>
+		<br />
+		<br />
+		<img id="fato" src="img/stop.png" width="300px">
+		<br />
+		<button class="btn btn-warning btn-block btn-lg" onclick="fcalc()" >开关</button>
+	</body>
+	<script>
+		let lightOnSrc="img/on.png";  
+		let lightOffSrc="img/off.png"; 
+		let fenonSrc="img/fanstart.gif";
+		let fenoffSrc="img/stop.png";
+		let isLightOn = false;
+		let fenon=false;
+		function calc() {
+			let img=document.getElementById("ato");
+			isLightOn=!isLightOn;
+			if (isLightOn) {
+				img.src=lightOnSrc;
+			}
+			else {
+				img.src=lightOffSrc;
+			}
+		}
+		function fcalc() {
+			let img=document.getElementById("fato");
+			fenon=!fenon;
+			if (fenon) {
+				img.src=fenonSrc;
+			}
+			else {
+				img.src=fenoffSrc;
+			}
+		}
+	</script>
+</html>
