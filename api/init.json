@@ -1,0 +1,152 @@
+{
+  "homeInfo": {
+    "title": "首页",
+    "href": "page/home.html"
+  },
+  "logoInfo": {
+    "title": "权盾法务",
+    "image": "images/e0b0bf3bb9e05de9a1541b0a75f14128.jpeg",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+        {
+          "title": "首页",
+          "href": "page/home.html",
+          "icon": "fa fa-home",
+          "target": "_self"
+        },
+        {
+          "title": "用户管理",
+          "href": "",
+          "icon": "fa fa-group",
+          "target": "_self",
+          "child": [
+          {
+            "title": "添加用户",
+            "href": "usermanage/adduser.html",
+            "icon": "fa fa-plus-square-o",
+            "target": "_self"
+          }, {
+            "title": "查询修改用户",
+            "href": "usermanage/queryuser.html",
+            "icon": "fa fa-search",
+            "target": "_self"
+          }
+        ]
+        },
+        {
+          "title": "法律咨询",
+          "href": "",
+          "icon": "fa fa-envelope",
+          "target": "_self",
+          "child": [
+            {
+              "title": "在线咨询"
+			  ,
+              "href": "legaladvice/online.html",
+              "icon": "fa fa-comments-o",
+              "target": "_self"
+            }, {
+              "title": "咨询记录查询",
+              "href": "legaladvice/consultation.html",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "律师管理",
+          "href": "",
+          "icon": "fa fa-male",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加律师",
+              "href": "lawyermanage/addlawyer.html",
+              "icon": "fa fa-plus-circle",
+              "target": "_self"
+            }, {
+              "title": "查询律师",
+              "href": "lawyermanage/querylawer.html",
+              "icon": "fa fa-search-plus",
+              "target": "_self"
+            }, {
+              "title": "成员统计",
+              "href": "lawyermanage/membersta.html",
+              "icon": "fa fa-bar-chart",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "法律文书管理",
+          "href": "",
+          "icon": "fa fa-book",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加文书",
+              "href": "lebookmanage/addbook.html",
+              "icon": "fa fa-plus-square-o",
+              "target": "_self"
+            }, {
+              "title": "文书信息",
+              "href": "lebookmanage/querybook.html",
+              "icon": "fa fa-search",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "案件管理",
+          "href": "",
+          "icon": "fa fa-archive",
+          "target": "_self",
+          "child": [
+            {
+              "title": "添加案件",
+              "href": "case/addcase.html",
+              "icon": "fa fa-plus-circle",
+              "target": "_self"
+            }, {
+              "title": "查询案件",
+              "href": "case/querycase.html",
+              "icon": "fa fa-search-plus",
+              "target": "_self"
+            }, {
+              "title": "案件统计",
+              "href": "case/casesta.html",
+              "icon": "fa fa-bar-chart",
+              "target": "_self"
+            }
+          ]
+        },
+        {
+          "title": "系统管理",
+          "href": "",
+          "icon": "fa fa-desktop",
+          "target": "_self",
+          "child": [
+            {
+              "title": "用户反馈",
+              "href": "service/feedback.html",
+              "icon": "fa fa-edit",
+              "target": "_self"
+            }, {
+              "title": "帮助中心指南",
+              "href": "service/helpguide.html",
+              "icon": "fa fa-wrench",
+              "target": "_self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

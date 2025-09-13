@@ -1,0 +1,86 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [{
+			"classname": "L2024001",
+			"realname": "张思远",
+			"deptname": "婚姻家庭、遗产继承",
+			"majorname": "研究生（法学）",
+			"grade": "2018 年",
+			"clientCount": 128
+		},
+		{
+			"classname": "L2024002",
+			"realname": "李沐阳",
+			"deptname": "房产纠纷、合同纠纷",
+			"majorname": "本科（法学）",
+			"grade": "2019 年",
+			"clientCount": 95
+		},
+		{
+			"classname": "L2024003",
+			"realname": "王若曦",
+			"deptname": "劳动仲裁、工伤赔偿",
+			"majorname": "博士（民商法学）",
+			"grade": "2016 年",
+			"clientCount": 156
+		},
+		{
+			"classname": "L2024004",
+			"realname": "赵宇辰",
+			"deptname": "知识产权、商标侵权",
+			"majorname": "研究生（知识产权法）",
+			"grade": "2020 年",
+			"clientCount": 72
+		},
+		{
+			"classname": "L2024005",
+			"realname": "陈雨桐",
+			"deptname": "交通事故、人身损害",
+			"majorname": "本科（法学）",
+			"grade": "2021 年",
+			"clientCount": 58
+		},
+		{
+			"classname": "L2024006",
+			"realname": "刘浩然",
+			"deptname": "医疗纠纷、侵权责任",
+			"majorname": "博士（卫生法学）",
+			"grade": "2015 年",
+			"clientCount": 183
+		},
+		{
+			"classname": "L2024007",
+			"realname": "孙语涵",
+			"deptname": "合同纠纷、企业法律顾问",
+			"majorname": "研究生（经济法学）",
+			"grade": "2017 年",
+			"clientCount": 112
+		},
+		{
+			"classname": "L2024008",
+			"realname": "周星辰",
+			"deptname": "婚姻家庭、青少年法律保护",
+			"majorname": "本科（法学）",
+			"grade": "2022 年",
+			"clientCount": 43
+		},
+		{
+			"classname": "L2024009",
+			"realname": "吴思琪",
+			"deptname": "劳动仲裁、企业合规",
+			"majorname": "研究生（劳动法学）",
+			"grade": "2019 年",
+			"clientCount": 89
+		},
+		{
+			"classname": "L2024010",
+			"realname": "郑浩然",
+			"deptname": "房产纠纷、征地拆迁",
+			"majorname": "本科（法学）",
+			"grade": "2020 年",
+			"clientCount": 67
+		}
+	]
+}
