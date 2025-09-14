@@ -4,11 +4,9 @@
   <meta charset="utf-8">
   <title>案件统计</title>
   <!-- 引入Layui CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/layui-src/dist/css/layui.css" media="all">
-  <!-- 引入Layui JS -->
-  <script src="https://cdn.jsdelivr.net/npm/layui-src/dist/layui.js"></script>
-  <!-- 引入ECharts（用于复杂图表） -->
-  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/layui/2.9.10/css/layui.css" media="all">
+<script src="https://cdn.bootcdn.net/ajax/libs/layui/2.9.10/layui.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
   <style>
     /* 图表容器通用样式 */
     .chart-box {
@@ -209,6 +207,7 @@ layui.use(['form', 'laydate'], function(){
 	    name: '待开庭',
 	    type: 'bar',
 	    data: [90, 60, 82, 40, 42]
+
 	  }
     ]
   };
