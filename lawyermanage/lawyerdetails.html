@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>律师详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- 引入Layui样式（路径需与项目一致） -->
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+</head>
+<body>
+<div class="layui-container" style="margin-top: 20px;">
+    <div class="layui-card">
+        <div class="layui-card-header">律师详情</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="lawyerDetailForm">
+                <!-- 律师编号 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">编号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="classname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 姓名 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="realname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 擅长领域 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">擅长领域</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="deptname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 学历 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学历</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="majorname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 入职时间 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">入职时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="grade" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 接收客户数 -->
+                <!-- 律师职称 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">律师职称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 关闭按钮 -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="closeBtn">关闭</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 引入Layui核心JS（路径需与项目一致） -->
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script>
+    // 工具函数：从URL中提取“编号”参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        return r ? decodeURIComponent(r[2]) : null;
+    }
+    var lawyerCode = getUrlParam('code'); // 获取URL中的“律师编号”
+    
+    // 模拟律师详情数据（实际项目需替换为后端接口请求）
+    var lawyerDataList = [
+        {
+        id: 1,
+        classname: '2024001145',
+        realname: ' 张思远 ',
+        deptname: ' 婚姻家庭、遗产继承 ',
+        majorname: ' 研究生 ',
+        grade: '2018 年 ',
+		title:'是'
+        },
+        {
+        id: 2,
+        classname: '2024002444',
+        realname: ' 李沐阳 ',
+        deptname: ' 房产纠纷、合同纠纷 ',
+        majorname: ' 本科 ',
+        grade: '2019 年 ',
+		title:'是'
+        },
+        {
+        id: 3,
+        classname: '2024003444',
+        realname: ' 王若曦 ',
+        deptname: ' 劳动仲裁、工伤赔偿 ',
+        majorname: ' 博士 ',
+        grade: '2016 年 ',
+		title:'是'
+        },
+        {
+        id: 4,
+        classname: '2024004555',
+        realname: ' 赵宇辰 ',
+        deptname: ' 知识产权、商标侵权 ',
+        majorname: ' 研究生 ',
+        grade: '2020 年 ',
+		title:'是'
+        },
+        {
+        id: 5,
+        classname: '2024005777',
+        realname: ' 陈雨桐 ',
+        deptname: ' 交通事故、人身损害 ',
+        majorname: ' 本科 ',
+        grade: '2021 年 ',
+		title:'是'
+        },
+        {
+        id: 6,
+        classname: '2024006888',
+        realname: ' 刘浩然 ',
+        deptname: ' 医疗纠纷、侵权责任 ',
+        majorname: ' 博士 ',
+        grade: '2015 年 ',
+		title:'是'
+        },
+        {
+        id: 7,
+        classname: '2024007555',
+        realname: ' 孙语涵 ',
+        deptname: ' 合同纠纷、企业法律顾问 ',
+        majorname: ' 研究生 ',
+        grade: '2017 年 ',
+		title:'是'
+        },
+        {
+        id: 8,
+        classname: '2024008666',
+        realname: ' 周星辰 ',
+        deptname: ' 婚姻家庭、青少年法律保护 ',
+        majorname: ' 本科 ',
+        grade: '2022 年 ',
+		title:'是'
+        },
+        {
+        id: 9,
+        classname: '2024009562',
+        realname: ' 吴思琪 ',
+        deptname: ' 劳动仲裁、企业合规 ',
+        majorname: ' 研究生 ',
+        grade: '2019 年 ',
+		title:'是'
+        },
+        {
+        id: 10,
+        classname: '2024010557',
+        realname: ' 郑浩然 ',
+        deptname: ' 房产纠纷、征地拆迁 ',
+        majorname: ' 本科 ',
+        grade: '2020 年 ',
+		title:'是'
+        }
+        // 可根据需要添加更多律师数据，确保classname与列表页一致
+		
+    ];
+    
+    // 根据“编号”查找律师详情
+    function getLawyerByCode(code) {
+        for (var i = 0; i < lawyerDataList.length; i++) {
+            if (lawyerDataList[i].classname === code) {
+                return lawyerDataList[i];
+            }
+        }
+        return null;
+    }
+    
+    layui.use(['form'], function(){
+        var form = layui.form;
+        var lawyer = getLawyerByCode(lawyerCode); // 根据编号匹配律师数据
+        
+        if (lawyer) {
+            // 填充表单数据
+            form.val('lawyerDetailForm', {
+                "classname": lawyer.classname,
+                "realname": lawyer.realname,
+                "deptname": lawyer.deptname,
+                "majorname": lawyer.majorname,
+                "grade": lawyer.grade,
+                "clientCount": lawyer.clientCount,
+                "title": lawyer.title
+            });
+        } else {
+            layer.msg('未找到该律师信息', {icon: 5}); // 若未找到，提示错误
+        }
+        
+        // 关闭弹窗逻辑
+        document.getElementById('closeBtn').onclick = function(){
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        }
+    });
+</script>
+</body>
+</html>
