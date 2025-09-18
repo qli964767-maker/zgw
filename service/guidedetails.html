@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>指南详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+</head>
+<body>
+<div class="layui-container" style="margin-top: 20px;">
+    <div class="layui-card">
+        <div class="layui-card-header">指南详情</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="guideDetailForm">
+                <!-- 指南类型 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="majorname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 指南名称 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">指南</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="classname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 指南内容 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">指南内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content" class="layui-textarea" readonly></textarea>
+                    </div>
+                </div>
+                <!-- 关闭按钮 -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="closeBtn">关闭</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script>
+    // 工具函数：从URL提取“指南名称”参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        return r ? decodeURIComponent(r[2]) : null;
+    }
+    var guideName = getUrlParam('guideName'); // 获取URL中的“指南名称”
+    
+    // 模拟指南详情数据（与JSON的`majorname`/`classname`匹配，补充`content`字段）
+    var guideDataList = [
+        {
+            majorname: "使用教程",
+            classname: "如何发起咨询",
+            content: "发起咨询步骤：1. 进入咨询页面；2. 选择咨询类型；3. 填写问题描述；4. 提交等待律师回复。"
+        },
+        {
+            majorname: "使用教程",
+            classname: "如何下载文书模板",
+            content: "文书模板下载流程：1. 进入文书模板专区；2. 选择所需模板；3. 点击下载；4. 保存本地使用。"
+        },
+        {
+            majorname: "使用教程",
+            classname: "如何预约律师",
+            content: "律师预约方法：1. 浏览律师列表选合适律师；2. 查看律师日程选时间；3. 提交预约申请；4. 等律师确认。"
+        },
+        {
+            majorname: "常见问题",
+            classname: "咨询费用能否退款",
+            content: "退款规则：律师未按时回复可全额退；已开始服务按进度比例退。"
+        },
+        {
+            majorname: "常见问题",
+            classname: "实名认证失败怎么办",
+            content: "解决方法：1. 检查身份证信息；2. 确保照片清晰；3. 仍失败联系客服人工审核。"
+        },
+        {
+            majorname: "隐私政策",
+            classname: "用户信息收集、使用、保护规则",
+            content: "收集范围：仅必要身份信息。使用：仅用于提供法律咨询。保护：加密存储、严格权限控制。"
+        },
+        {
+            majorname: "隐私政策",
+            classname: "用户服务协议",
+            content: "协议内容：明确用户与平台权利义务、服务范围、违约责任、争议解决方式。"
+        },
+        {
+            majorname: "隐私政策",
+            classname: "律师入驻协议",
+            content: "入驻要求：律师需合法执业，遵守平台规则，提供专业合规服务。平台提供展示与接单渠道。"
+        }
+    ];
+    
+    // 根据“指南名称”匹配数据
+    function getGuideByName(name) {
+        for (var i = 0; i < guideDataList.length; i++) {
+            if (guideDataList[i].classname === name) {
+                return guideDataList[i];
+            }
+        }
+        return null;
+    }
+    
+    layui.use(['form'], function(){
+        var form = layui.form;
+        var guide = getGuideByName(guideName); // 根据名称匹配数据
+        
+        if (guide) {
+            // 填充表单数据
+            form.val('guideDetailForm', {
+                "majorname": guide.majorname,
+                "classname": guide.classname,
+                "content": guide.content
+            });
+        } else {
+            layer.msg('未找到该指南信息', {icon: 5}); // 若未找到（模拟数据不匹配时提示）
+        }
+        
+        // 关闭弹窗逻辑
+        document.getElementById('closeBtn').onclick = function(){
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        }
+    });
+</script>
+</body>
+</html>
