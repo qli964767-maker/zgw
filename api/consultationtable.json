@@ -1,0 +1,86 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [{
+			"id": 1,
+			"addate": "2024-05-01 09:15:30",
+			"realname": "张三",
+			"deptname": "李敏律师",
+			"majorname": "婚姻家庭纠纷",
+			"telephone": "是"
+		},
+		{
+			"id": 2,
+			"addate": "2024-05-01 10:20:15",
+			"realname": "李四",
+			"deptname": "王杰律师",
+			"majorname": "劳动合同纠纷",
+			"telephone": "否"
+		},
+		{
+			"id": 3,
+			"addate": "2024-05-02 08:45:00",
+			"realname": "王五",
+			"deptname": "张琳律师",
+			"majorname": "知识产权纠纷",
+			"telephone": "是"
+		},
+		{
+			"id": 4,
+			"addate": "2024-05-02 14:30:22",
+			"realname": "赵六",
+			"deptname": "陈明律师",
+			"majorname": "房产纠纷",
+			"telephone": "是"
+		},
+		{
+			"id": 5,
+			"addate": "2024-05-03 11:05:47",
+			"realname": "孙七",
+			"deptname": "刘芳律师",
+			"majorname": "债务纠纷",
+			"telephone": "否"
+		},
+		{
+			"id": 6,
+			"addate": "2024-05-03 15:18:33",
+			"realname": "周八",
+			"deptname": "黄涛律师",
+			"majorname": "人身损害赔偿",
+			"telephone": "是"
+		},
+		{
+			"id": 7,
+			"addate": "2024-05-04 09:50:10",
+			"realname": "吴九",
+			"deptname": "郑敏律师",
+			"majorname": "公司法律事务",
+			"telephone": "否"
+		},
+		{
+			"id": 8,
+			"addate": "2024-05-04 16:25:55",
+			"realname": "郑十",
+			"deptname": "马杰律师",
+			"majorname": "继承纠纷",
+			"telephone": "是"
+		},
+		{
+			"id": 9,
+			"addate": "2024-05-05 10:40:28",
+			"realname": "冯一",
+			"deptname": "杨琳律师",
+			"majorname": "交通事故纠纷",
+			"telephone": "否"
+		},
+		{
+			"id": 10,
+			"addate": "2024-05-05 14:55:12",
+			"realname": "陈二",
+			"deptname": "何明律师",
+			"majorname": "医疗纠纷",
+			"telephone": "是"
+		}
+	]
+}

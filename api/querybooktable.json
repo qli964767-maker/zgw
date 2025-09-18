@@ -1,0 +1,56 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [{
+			"realname": "100001",
+			"grade": "2023-01-15",
+			"deptname": "婚姻家庭"
+		},
+		{
+			"realname": "100002",
+			"grade": "2023-03-22",
+			"deptname": "房产纠纷"
+		},
+		{
+			"realname": "100003",
+			"grade": "2023-05-08",
+			"deptname": "劳动仲裁"
+		},
+		{
+			"realname": "100004",
+			"grade": "2023-07-19",
+			"deptname": "合同纠纷"
+		},
+		{
+			"realname": "100005",
+			"grade": "2023-09-03",
+			"deptname": "知识产权"
+		},
+		{
+			"realname": "100006",
+			"grade": "2023-11-11",
+			"deptname": "交通事故"
+		},
+		{
+			"realname": "100007",
+			"grade": "2024-01-25",
+			"deptname": "医疗纠纷"
+		},
+		{
+			"realname": "100008",
+			"grade": "2024-03-17",
+			"deptname": "婚姻家庭"
+		},
+		{
+			"realname": "100009",
+			"grade": "2024-05-30",
+			"deptname": "合同纠纷"
+		},
+		{
+			"realname": "100010",
+			"grade": "2024-07-05",
+			"deptname": "交通事故"
+		}
+	]
+}

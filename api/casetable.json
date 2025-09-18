@@ -1,0 +1,66 @@
+{
+	"code": 0,
+	"msg": "",
+	"count": 1000,
+	"data": [{
+			"year": "2025-01-15",
+			"deptname": "婚姻家庭",
+			"majorname": "已提交起诉状",
+			"classname": "张律师"
+		},
+		{
+			"year": "2025-02-20",
+			"deptname": "房产纠纷",
+			"majorname": "法院已立案",
+			"classname": "李律师"
+		},
+		{
+			"year": "2025-03-10",
+			"deptname": "劳动仲裁",
+			"majorname": "待开庭",
+			"classname": "王律师"
+		},
+		{
+			"year": "2025-04-05",
+			"deptname": "合同纠纷",
+			"majorname": "已提交起诉状",
+			"classname": "赵律师"
+		},
+		{
+			"year": "2025-05-12",
+			"deptname": "知识产权",
+			"majorname": "法院已立案",
+			"classname": "刘律师"
+		},
+		{
+			"year": "2025-06-18",
+			"deptname": "交通事故",
+			"majorname": "待开庭",
+			"classname": "陈律师"
+		},
+		{
+			"year": "2025-07-03",
+			"deptname": "医疗纠纷",
+			"majorname": "已提交起诉状",
+			"classname": "杨律师"
+		},
+		{
+			"year": "2025-08-25",
+			"deptname": "婚姻家庭",
+			"majorname": "法院已立案",
+			"classname": "黄律师"
+		},
+		{
+			"year": "2025-09-10",
+			"deptname": "房产纠纷",
+			"majorname": "待开庭",
+			"classname": "周律师"
+		},
+		{
+			"year": "2025-10-01",
+			"deptname": "劳动仲裁",
+			"majorname": "已提交起诉状",
+			"classname": "吴律师"
+		}
+	]
+}
