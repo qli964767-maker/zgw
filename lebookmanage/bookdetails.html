@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文书详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- 引入Layui样式（路径需与项目一致） -->
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+</head>
+<body>
+<div class="layui-container" style="margin-top: 20px;">
+    <div class="layui-card">
+        <div class="layui-card-header">文书详情</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="documentDetailForm">
+                <!-- 文书编号 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">编号</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="code" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 时间 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="time" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 类型 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="type" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 文书是否检查 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文书是否检查</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="isChecked" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 文书内容 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文书内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="content" class="layui-textarea" readonly></textarea>
+                    </div>
+                </div>
+                <!-- 关闭按钮 -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="closeBtn">关闭</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 引入Layui核心JS（路径需与项目一致） -->
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script>
+    // 工具函数：从URL中提取“编号”参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        return r ? decodeURIComponent(r[2]) : null;
+    }
+    var docCode = getUrlParam('code'); // 获取URL中的“文书编号”
+    
+    // 模拟文书详情数据（实际项目需替换为后端接口请求）
+    var docDataList = [
+        {
+            code: '100001',
+            time: '2023-01-15',
+            type: '婚姻家庭',
+            isChecked: '是',
+            content: '这是一份婚姻家庭类文书，涉及离婚财产分割与子女抚养权判定...'
+        },
+        {
+            code: '100002',
+            time: '2023-03-22',
+            type: '房产纠纷',
+            isChecked: '是',
+            content: '本房产纠纷文书围绕二手房买卖违约问题，卖方拒不过户并拒绝赔偿...'
+        },
+        {
+            code: '100003',
+            time: '2023-05-08',
+            type: '劳动仲裁',
+            isChecked: '是',
+            content: '劳动仲裁文书涉及员工被非法辞退，要求公司支付经济补偿金及拖欠工资...'
+        },
+        {
+            code: '100004',
+            time: '2023-07-19',
+            type: '合同纠纷',
+            isChecked: '是',
+            content: '合同纠纷文书关于货物买卖合同履行问题，买方拖欠尾款且拒绝协商...'
+        },
+        {
+            code: '100005',
+            time: '2023-09-03',
+            type: '知识产权',
+            isChecked: '是',
+            content: '知识产权文书涉及商标侵权，被告擅自使用原告注册商标并大规模销售...'
+        },
+        {
+            code: '100006',
+            time: '2023-11-11',
+            type: '交通事故',
+            isChecked: '是',
+            content: '交通事故文书关于机动车与非机动车碰撞的责任认定及赔偿金额争议...'
+        },
+        {
+            code: '100007',
+            time: '2024-01-25',
+            type: '医疗纠纷',
+            isChecked: '是',
+            content: '医疗纠纷文书涉及手术过失导致的损害赔偿，医院存在明显诊疗过错...'
+        },
+        {
+            code: '100008',
+            time: '2024-03-17',
+            type: '婚姻家庭',
+            isChecked: '是',
+            content: '婚姻家庭类文书，关于婚前财产公证与婚后财产约定的法律效力分析...'
+        },
+        {
+            code: '100009',
+            time: '2024-05-30',
+            type: '合同纠纷',
+            isChecked: '是',
+            content: '合同纠纷文书关于服务合同解除，服务商未按约定提供服务且拒绝退款...'
+        },
+        {
+            code: '100010',
+            time: '2024-07-05',
+            type: '交通事故',
+            isChecked: '是',
+            content: '交通事故文书关于交强险与商业险的理赔范围及最终赔偿金额确定...'
+        }
+    ];
+    
+    // 根据“编号”查找文书详情
+    function getDocByCode(code) {
+        for (var i = 0; i < docDataList.length; i++) {
+            if (docDataList[i].code === code) {
+                return docDataList[i];
+            }
+        }
+        return null;
+    }
+    
+    layui.use(['form'], function(){
+        var form = layui.form;
+        var doc = getDocByCode(docCode); // 根据编号匹配文书数据
+        
+        if (doc) {
+            // 填充表单数据
+            form.val('documentDetailForm', {
+                "code": doc.code,
+                "time": doc.time,
+                "type": doc.type,
+                "isChecked": doc.isChecked,
+                "content": doc.content
+            });
+        } else {
+            layer.msg('未找到该文书信息', {icon: 5}); // 若未找到，提示错误
+        }
+        
+        // 关闭弹窗逻辑
+        document.getElementById('closeBtn').onclick = function(){
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        }
+    });
+</script>
+</body>
+</html>
