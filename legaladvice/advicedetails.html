@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>咨询详情</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- 引入Layui样式（路径需与项目一致） -->
+    <link rel="stylesheet" href="../lib/layui-v2.6.3/css/layui.css" media="all">
+    <link rel="stylesheet" href="../css/layuimini.css" media="all">
+</head>
+<body>
+<div class="layui-container" style="margin-top: 20px;">
+    <div class="layui-card">
+        <div class="layui-card-header">咨询详情</div>
+        <div class="layui-card-body">
+            <form class="layui-form" lay-filter="consultDetailForm">
+                <!-- 咨询时间 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">咨询时间</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="addate" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 咨询人姓名 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="realname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 对接律师 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">律师</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="deptname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 咨询类型 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">咨询类型</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="majorname" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 是否被接收 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">是否被律师接收</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="telephone" autocomplete="off" class="layui-input" readonly>
+                    </div>
+                </div>
+                <!-- 咨询内容（textarea展示长文本） -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">咨询内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="consultContent" class="layui-textarea" readonly></textarea>
+                    </div>
+                </div>
+                <!-- 关闭按钮 -->
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button type="button" class="layui-btn" id="closeBtn">关闭</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- 引入Layui核心JS（路径需与项目一致） -->
+<script src="../lib/layui-v2.6.3/layui.js" charset="utf-8"></script>
+<script>
+    // 工具函数：从URL中提取参数
+    function getUrlParam(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        return r ? decodeURIComponent(r[2]) : null;
+    }
+    var consultId = getUrlParam('id'); // 获取URL中的“咨询ID”
+    
+    // 模拟咨询详情数据（实际项目需替换为后端接口请求）
+    var consultDataList = [
+	
+		{
+			id: 1,
+			addate: '2023-10-01 10:30',
+			realname: '张三',
+			deptname: '王律师',
+			majorname: '婚姻家庭',
+			telephone: '是',
+			consultContent: '咨询关于离婚财产分割的问题，双方婚后共同购买了一套房产，现要离婚，如何公平分割？另外，孩子的抚养权该如何判定？'
+		},
+		{
+			id: 2,
+			addate: '2023-10-05 09:45',
+			realname: '李四',
+			deptname: '李律师',
+			majorname: '合同纠纷',
+			telephone: '是',
+			consultContent: '咨询建材采购合同问题，我方按约定支付5万元定金后，卖方逾期2个月未供货，且拒绝退还定金，多次协商无果，该如何通过法律途径追回定金并索赔？'
+		},
+		{
+			id: 3,
+			addate: '2023-10-12 14:10',
+			realname: '王五',
+			deptname: '张律师',
+			majorname: '劳动争议',
+			telephone: '是',
+			consultContent: '咨询被公司违法辞退的问题，本人在公司工作3年，无任何过错却被口头辞退，公司不支付经济补偿金，还扣发了上月绩效工资，该怎么维权？'
+		},
+		{
+			id: 4,
+			addate: '2023-10-20 11:25',
+			realname: '赵六',
+			deptname: '刘律师',
+			majorname: '房产纠纷',
+			telephone: '是',
+			consultContent: '咨询二手房交易纠纷，我购买的二手房在过户时发现卖方隐瞒房屋已被抵押的情况，导致无法办理过户，卖方还拒绝退还20万元首付款，该如何处理？'
+		},
+		{
+			id: 5,
+			addate: '2023-11-02 15:30',
+			realname: '孙七',
+			deptname: '陈律师',
+			majorname: '知识产权',
+			telephone: '是',
+			consultContent: '咨询商标侵权问题，我方注册的“晨光”商标被某商家擅自用于同类产品包装，且销售范围广，严重影响我方品牌销量，该如何要求对方停止侵权并赔偿损失？'
+		},
+		{
+			id: 6,
+			addate: '2023-11-08 10:00',
+			realname: '周八',
+			deptname: '杨律师',
+			majorname: '刑事辩护',
+			telephone: '是',
+			consultContent: '咨询家人涉嫌故意伤害的问题，家人因被对方辱骂先动手，导致对方轻伤，现被警方调查，家人已主动赔偿并取得谅解，能否避免被追究刑事责任？'
+		},
+		{
+			id: 7,
+			addate: '2023-11-15 13:40',
+			realname: '吴九',
+			deptname: '黄律师',
+			majorname: '交通事故',
+			telephone: '是',
+			consultContent: '咨询电动车交通事故赔偿，我骑电动车正常行驶时被货车剐蹭，导致手臂骨折，交警判定对方全责，但保险公司只愿赔偿医疗费，误工费和营养费不愿承担，该怎么办？'
+		},
+		{
+			id: 8,
+			addate: '2023-11-22 09:20',
+			realname: '郑十',
+			deptname: '赵律师',
+			majorname: '债权债务',
+			telephone: '是',
+			consultContent: '咨询朋友借款追讨问题，2022年朋友向我借了15万元，没写借条，只有银行转账记录，现在朋友失联，无法联系，这种情况能向法院起诉要回借款吗？'
+		},
+		{
+			id: 9,
+			addate: '2023-12-01 16:05',
+			realname: '钱十一',
+			deptname: '吴律师',
+			majorname: '医疗纠纷',
+			telephone: '是',
+			consultContent: '咨询老人医疗事故问题，我母亲住院期间被护士错输药物，导致严重过敏，抢救后留下后遗症，医院只愿承担部分医疗费，不愿赔偿其他损失，该如何维权？'
+		},
+		{
+			id: 10,
+			addate: '2023-12-08 14:30',
+			realname: '冯十二',
+			deptname: '马律师',
+			majorname: '公司法律',
+			telephone: '是',
+			consultContent: '咨询合伙公司纠纷，我和朋友合伙开公司，各占50%股份，朋友作为法定代表人擅自转移公司账户10万元用于个人消费，我发现后对方拒绝归还，该如何追回公司资产？'
+		}
+        
+    ];
+    
+    // 根据ID查找咨询详情
+    function getConsultById(id) {
+        for (var i = 0; i < consultDataList.length; i++) {
+            if (consultDataList[i].id == id) {
+                return consultDataList[i];
+            }
+        }
+        return null;
+    }
+    
+    layui.use(['form'], function(){
+        var form = layui.form;
+        var consult = getConsultById(consultId); // 根据ID匹配咨询数据
+        
+        if (consult) {
+            // 填充表单数据
+            form.val('consultDetailForm', {
+                "addate": consult.addate,
+                "realname": consult.realname,
+                "deptname": consult.deptname,
+                "majorname": consult.majorname,
+                "telephone": consult.telephone,
+                "consultContent": consult.consultContent
+            });
+        } else {
+            layer.msg('未找到该咨询信息', {icon: 5}); // 若未找到，提示错误
+        }
+        
+        // 关闭弹窗逻辑
+        document.getElementById('closeBtn').onclick = function(){
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(index);
+        }
+    });
+</script>
+</body>
+</html>
